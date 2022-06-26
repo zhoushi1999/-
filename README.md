@@ -22,3 +22,4 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+博斯克拉发吉萨离开；萨拉丁饭卡死灵法师

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <van-nav-bar title="登录">
-      <van-icon name="cross" slot="left" />
+    <van-nav-bar title="登录"  @click-left="$router.back()">
+      <van-icon name="cross" slot="left"/>
     </van-nav-bar>
     <van-form @submit="onSubmit" ref="form">
       <van-field
@@ -47,6 +47,7 @@
         >
       </div>
     </van-form>
+    <p class="ys">隐私条款</p>
   </div>
 </template>
 
@@ -68,6 +69,7 @@ export default {
         const res = await login(values)
         console.log(res)
         this.$store.commit('setUser', res.data.data)
+        this.$router.push('/my')
       } catch (err) { console.log(err) }
     },
     async onSendSms () {
@@ -121,5 +123,12 @@ export default {
 .van-count-down {
   position: fixed;
   right: 18px;
+}
+.ys {
+  position: fixed;
+  z-index: 1;
+  font-size: 25px;
+  color: #666666;
+  text-align: center;
 }
 </style>

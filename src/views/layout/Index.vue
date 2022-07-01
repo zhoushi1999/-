@@ -1,11 +1,11 @@
 <template>
   <div>
-    <router-view class='main'/>
-    <van-tabbar route >
+    <keep-alive :include="['home']"><router-view class="main" /></keep-alive>
+    <van-tabbar route>
       <van-tabbar-item replace to="/home"
         >首页
         <!-- <i class="toutiao toutiao-shouye" slot="icon"></i> -->
-        <template #icon><i class="toutiao toutiao-shouye" ></i> </template>
+        <template #icon><i class="toutiao toutiao-shouye"></i> </template>
       </van-tabbar-item>
       <van-tabbar-item replace to="/video"
         >视频<i class="toutiao toutiao-shipin" slot="icon"></i
@@ -41,8 +41,8 @@ export default {
 /deep/.van-tabbar-item__text {
   font-size: 20px;
 }
-.main{
-  background-color: #F5F7F9;
+.main {
+  background-color: #f5f7f9;
   padding-bottom: 100px;
 }
 </style>

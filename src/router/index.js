@@ -8,6 +8,7 @@ const Video = () => import('@/views/video/Video.vue')
 const Question = () => import('@/views/question/Question.vue')
 const My = () => import('@/views/my/My.vue')
 const Search = () => import('@/views/Search/')
+const Article = () => import('@/views/Article/index.vue')
 Vue.use(VueRouter)
 
 const routes = [
@@ -23,7 +24,13 @@ const routes = [
         { path: 'my', component: My }]
   },
   { path: '/Login', component: Login },
-  { path: '/search', component: Search }
+  { path: '/search', component: Search },
+  {
+    path: '/article/:article_id',
+    component: Article,
+    name: 'article',
+    props: true// 让路由和组件解耦
+  }
 ]
 
 const router = new VueRouter({
